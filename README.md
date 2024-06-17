@@ -1,4 +1,4 @@
-# IOT_SmartStreetLight
+![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/59a3d239-e8d8-4fc2-8119-7816d7625553)# IOT_SmartStreetLight
 Sortware: Arduino IDE
 
 Hardware: Esp32, Arduino, Sensor light
@@ -17,4 +17,9 @@ Arduino:
    - Truyền thông số cảm biến ánh sáng và báo lỗi đến ESP32 để xử lý.
 
 ![Screenshot 2024-06-17 134809](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/4d50aafe-b4a3-47ba-9253-21ab5f543ac8)
-![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/4508ac35-841b-4f63-9d61-55fc4e009e82)
+
+Demo hoạt động 
+
+![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/5a44920e-fff6-44ae-99e9-eaeff27fe3f6)
+![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/cff3c740-e02a-4f50-9ef9-6bdd23e81ac8)
+
