@@ -1,4 +1,3 @@
-![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/59a3d239-e8d8-4fc2-8119-7816d7625553)# IOT_SmartStreetLight
 Sortware: Arduino IDE
 
 Hardware: Esp32, Arduino, Sensor light
