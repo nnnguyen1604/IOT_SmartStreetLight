@@ -1,8 +1,12 @@
 # IOT_SmartStreetLight
 Sortware: Arduino IDE
+
 Hardware: Esp32, Arduino, Sensor light
+
 Protocol: Lora 
+
 SQL: noSQL FireBase
+
  --------------------------------------------------------------------------------
  ESP32:
    - Lấy các thông tin điều khiển từ Firebase dựa vào đường dẫn sau đó truyền đến các đèn.
