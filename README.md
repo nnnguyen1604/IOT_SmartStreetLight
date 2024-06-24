@@ -16,6 +16,8 @@ SQL: noSQL FireBase
 Arduino: 
    - Tiếp nhận thông tin điều khiển của Esp32 điều khiển chế độ hoạt động, độ sáng. 
    - Truyền thông số cảm biến ánh sáng và báo lỗi đến ESP32 để xử lý.
+
+Tổng quan hệ thống:
 ![Picture8](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/14d5daa7-fe80-4158-879d-85a71770ee85)
 
 
