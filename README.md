@@ -18,6 +18,7 @@ Arduino:
    - Truyền thông số cảm biến ánh sáng và báo lỗi đến ESP32 để xử lý.
 ![Picture8](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/14d5daa7-fe80-4158-879d-85a71770ee85)
 
+
 ![Screenshot 2024-06-17 134809](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/4d50aafe-b4a3-47ba-9253-21ab5f543ac8)
 
 
