@@ -17,9 +17,10 @@ Arduino:
    - Tiếp nhận thông tin điều khiển của Esp32 điều khiển chế độ hoạt động, độ sáng. 
    - Truyền thông số cảm biến ánh sáng và báo lỗi đến ESP32 để xử lý.
 
-![Screenshot 2024-06-17 134809](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/4d50aafe-b4a3-47ba-9253-21ab5f543ac8)
-![Picture1](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/1b715823-d243-4ffe-a925-fc9f7cae74d2)
-![Picture1](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/1849d2f1-500c-47e6-8f00-d6dda5d32c09)
+![Screenshot 2024-06-17 134809](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/4d50aafe-b4a3-47ba-9253-21ab5f543ac8)![Picture5](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/69876490-88fd-4498-b936-a772affb7d26)
+
+![Picture1](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/1b715823-d243-4ffe-a925-fc9f7cae74d2) ![Uploading Picture5.png…]()
+
 
 Demo hoạt động 
 
