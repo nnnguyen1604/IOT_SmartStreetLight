@@ -31,3 +31,4 @@ Demo hoạt động
 
 
 ![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/cff3c740-e02a-4f50-9ef9-6bdd23e81ac8)
+![Web_Photo_Editor](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/22e5ade6-2217-44cf-b2ff-095b8286f6e3)
