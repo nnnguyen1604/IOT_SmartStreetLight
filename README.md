@@ -6,7 +6,7 @@ Hardware: Esp32, Arduino, Sensor light
 
 Protocol: Lora 
 
-SQL: noSQL FireBase
+Realtime Database: FrireBase
 
  --------------------------------------------------------------------------------
  ESP32:
