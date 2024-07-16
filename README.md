@@ -1,23 +1,10 @@
-IOT SMART STREET LIGHT
+SMART STREET LIGHT
 -----------------------------------------------------------------------------------
-Sortware: Arduino IDE
-
-Hardware: Esp32, Arduino, Sensor light
-
-Protocol: Lora 
-
-Realtime Database: FrireBase
-
+Description: Building an intelligent street lighting system. The lights operate automatically or are controlled through a website and application. Necessary data and error notifications are sent to the management center.
  --------------------------------------------------------------------------------
- ESP32:
-   - Lấy các thông tin điều khiển từ Firebase dựa vào đường dẫn sau đó truyền đến các đèn.
-   - Nhận thông tin từ các đèn tách biệt dựa vào ID sau đó đưa thông tin lên Firebase để quản lý.
+Hardware: Esp32, Arduino Nano, LoRa 433, Dimmer
 
-Arduino: 
-   - Tiếp nhận thông tin điều khiển của Esp32 điều khiển chế độ hoạt động, độ sáng. 
-   - Truyền thông số cảm biến ánh sáng và báo lỗi đến ESP32 để xử lý.
-
-Tổng quan hệ thống:
+Development: Arduino IDE, Firebase
 
 ![Picture8](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/14d5daa7-fe80-4158-879d-85a71770ee85)
 ![Presentation1](https://github.com/user-attachments/assets/760f1411-24bb-436e-8e6e-fb5d261607f4)
