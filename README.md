@@ -20,6 +20,8 @@ Arduino:
 Tổng quan hệ thống:
 
 ![Picture8](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/14d5daa7-fe80-4158-879d-85a71770ee85)
+![Presentation1](https://github.com/user-attachments/assets/760f1411-24bb-436e-8e6e-fb5d261607f4)
+
 
 ![gateway vpd (3)](https://github.com/user-attachments/assets/8c757911-14d3-4989-a743-4c5b86d1c08f)
 
