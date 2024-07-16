@@ -33,11 +33,12 @@ Tổng quan hệ thống:
 
 
 Demo hoạt động 
-
-![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/5a44920e-fff6-44ae-99e9-eaeff27fe3f6)
+![Screenshot 2024-07-17 010803](https://github.com/user-attachments/assets/74e56fc7-1c31-4640-805d-17e6df521b6a)
+![Screenshot 2024-07-17 010811](https://github.com/user-attachments/assets/4bc2ad97-de6a-4faa-927f-7324f25d4f91)
 
 
 ![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/cff3c740-e02a-4f50-9ef9-6bdd23e81ac8)
-![Picture6](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/7d31d90c-d0a1-449d-8cf8-118520a9dfac)
 
-![Web_Photo_Editor](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/22e5ade6-2217-44cf-b2ff-095b8286f6e3)
+
+![Screenshot 2024-07-17 010819](https://github.com/user-attachments/assets/702e85bd-9ffd-45c9-a6e6-d3ed5a351dc9)
+
