@@ -21,8 +21,10 @@ Tổng quan hệ thống:
 
 ![Picture8](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/14d5daa7-fe80-4158-879d-85a71770ee85)
 
+![gateway vpd (3)](https://github.com/user-attachments/assets/8c757911-14d3-4989-a743-4c5b86d1c08f)
 
-![Screenshot 2024-06-17 134809](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/4d50aafe-b4a3-47ba-9253-21ab5f543ac8)
+![gateway vpd (4)](https://github.com/user-attachments/assets/514e45f1-d931-4e4a-9459-130d05a05f21)
+
 
 
 ![Picture5](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/cd29fe77-2643-49bd-aacc-ba3887ffa290)
