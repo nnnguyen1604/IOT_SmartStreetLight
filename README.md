@@ -23,7 +23,8 @@ Demo hoạt động
 ![Screenshot 2024-07-17 010803](https://github.com/user-attachments/assets/74e56fc7-1c31-4640-805d-17e6df521b6a)
 ![Screenshot 2024-07-17 010811](https://github.com/user-attachments/assets/4bc2ad97-de6a-4faa-927f-7324f25d4f91)
 
-![440394578_742893788029312_2813565749386078478_n (1)](https://github.com/user-attachments/assets/1e7efdc1-c45f-46fd-a9f3-68ec2e83546c)
+![450504481_1491359014815389_1964845785793478857_n](https://github.com/user-attachments/assets/1399a2c3-6d5f-4d8f-bf7d-bab622a0b44e)
+
 
 
 ![Screenshot 2024-07-17 011130](https://github.com/user-attachments/assets/85dfdf74-6fc2-4033-8f7b-af21dc21fc83)
