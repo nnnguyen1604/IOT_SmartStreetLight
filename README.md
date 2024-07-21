@@ -23,8 +23,9 @@ Demo hoạt động
 ![Screenshot 2024-07-17 010803](https://github.com/user-attachments/assets/74e56fc7-1c31-4640-805d-17e6df521b6a)
 ![Screenshot 2024-07-17 010811](https://github.com/user-attachments/assets/4bc2ad97-de6a-4faa-927f-7324f25d4f91)
 
+![440394578_742893788029312_2813565749386078478_n (1)](https://github.com/user-attachments/assets/1e7efdc1-c45f-46fd-a9f3-68ec2e83546c)
 
-![Screenshot (346)](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/cff3c740-e02a-4f50-9ef9-6bdd23e81ac8)
+
 ![Screenshot 2024-07-17 011130](https://github.com/user-attachments/assets/85dfdf74-6fc2-4033-8f7b-af21dc21fc83)
 
 
