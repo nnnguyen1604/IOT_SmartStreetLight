@@ -27,6 +27,9 @@ void setup() {
     pinMode(M0_M1, OUTPUT);
     pinMode(Relay,OUTPUT);
     digitalWrite(M0_M1, LOW); 
+  pinMode(PIN_A0, OUTPUT);
+  pinMode(PIN_A1, OUTPUT);
+  pinMode(PIN_A2, OUTPUT);
     delay(3000);
     if (! rtc.begin()) {
       Serial.println("Couldn't find RTC");
@@ -41,8 +44,8 @@ void setup() {
 
 void Zero(){
   delay(500);
-  dimValue = 0;
-  Serial.println("DimLevel: 0");Serial.println();
+  dimValue = 1;
+  Serial.println("DimLevel: 1");Serial.println();
   digitalWrite(PIN_A2, LOW);   
   digitalWrite(PIN_A1, HIGH);   
   digitalWrite(PIN_A0, LOW);   
@@ -50,8 +53,8 @@ void Zero(){
 
 void One(){
   delay(500);
-  dimValue = 1;
-  Serial.println("DimLevel: 1");Serial.println();
+  dimValue = 2;
+  Serial.println("DimLevel: 2");Serial.println();
   digitalWrite(PIN_A2, HIGH);   
   digitalWrite(PIN_A1, LOW);   
   digitalWrite(PIN_A0, LOW);   
@@ -59,19 +62,10 @@ void One(){
 
 void Two(){
   delay(500);
-  dimValue = 2;
-  Serial.println("DimLevel: 2");Serial.println();
-  digitalWrite(PIN_A2, LOW);   
-  digitalWrite(PIN_A1, HIGH);   
-  digitalWrite(PIN_A0, HIGH);   
-};
-
-void Three(){
-  delay(500);
   dimValue = 3;
   Serial.println("DimLevel: 3");Serial.println();
   digitalWrite(PIN_A2, LOW);   
-  digitalWrite(PIN_A1, LOW);   
+  digitalWrite(PIN_A1, HIGH);   
   digitalWrite(PIN_A0, HIGH);   
 };
 
@@ -79,6 +73,15 @@ void Four(){
   delay(500);
   dimValue = 4;
   Serial.println("DimLevel: 4");Serial.println();
+  digitalWrite(PIN_A2, LOW);   
+  digitalWrite(PIN_A1, LOW);   
+  digitalWrite(PIN_A0, HIGH);   
+};
+
+void Three(){
+  delay(500);
+  dimValue = 5;
+  Serial.println("DimLevel: 5");Serial.println();
   digitalWrite(PIN_A2, HIGH);   
   digitalWrite(PIN_A1, LOW);   
   digitalWrite(PIN_A0, HIGH);   
@@ -86,8 +89,8 @@ void Four(){
 
 void Five(){
   delay(500);
-  dimValue = 5;
-  Serial.println("DimLevel: 5");Serial.println();
+  dimValue = 6;
+  Serial.println("DimLevel: 6");Serial.println();
   digitalWrite(PIN_A0, HIGH);   
   digitalWrite(PIN_A1, HIGH);   
   digitalWrite(PIN_A2, HIGH);   
@@ -95,8 +98,8 @@ void Five(){
 
 void Six(){
   delay(500);
-  dimValue = 6;
-  Serial.println("DimLevel: 6");Serial.println();
+  dimValue = 7;
+  Serial.println("DimLevel: 7");Serial.println();
   digitalWrite(PIN_A2, HIGH);   
   digitalWrite(PIN_A1, HIGH);   
   digitalWrite(PIN_A0, LOW);   
@@ -104,8 +107,8 @@ void Six(){
 
 void Seven(){
   delay(500);
-  dimValue = 7;
-  Serial.println("DimLevel: 7");Serial.println();
+  dimValue = 8;
+  Serial.println("DimLevel: 8");Serial.println();
   digitalWrite(PIN_A2, LOW);   
   digitalWrite(PIN_A1, LOW);   
   digitalWrite(PIN_A0, LOW);   
@@ -127,14 +130,21 @@ void processSerialData(String data, int lightEnv, int time) {
   int bIndex = str.indexOf('b');
   int cIndex = str.indexOf('c');
   int dIndex = str.indexOf('d');
+  int eIndex = str.indexOf('e');
+  int fIndex = str.indexOf('f');
   int arrDimLevel[24] = {0};
+  // Control 0: Mode 0: SensorEnv
+  // Control 0 : Mode 1: LightChart
+  // Control 1: value
 
   String receivedAreaID = str.substring(aIndex + 1, bIndex);
   Serial.println("AreID:"+receivedAreaID);
   String receivedLightID = str.substring(bIndex + 1, cIndex);
   Serial.println("LightID:"+receivedLightID);
   int control = str.substring(cIndex + 1, dIndex).toInt();
-  String stringArrDim = str.substring(dIndex + 1);
+  int mode = str.substring(dIndex + 1, eIndex).toInt();
+  int value = str.substring(eIndex + 1, fIndex).toInt();
+  String stringArrDim = str.substring(fIndex + 1);
   for (int i = 0; i < 24; i++) {
       arrDimLevel[i] = stringArrDim.substring(i, i + 1).toInt();
   }
@@ -146,18 +156,21 @@ void processSerialData(String data, int lightEnv, int time) {
     Serial.println("Message from Gateway: "+data);  Serial.print("Hour: "+String(time)+"; "); 
     Serial.println("AreID: "+receivedAreaID+", LightID: "+receivedLightID+", Control: "+String(control)+", ArrayDim: "+stringArrDim);
     Serial.print("Current Time: "+String(time)+", LightEnviroment: "+String(lightEnv)+", ");
-    switch(control) {
-      case 0: mode_0(lightEnv); break;
-      case 1: mode_1(time,arrDimLevel); break;
-      case 2: mode_2(lightEnv,time,arrDimLevel); break;
-      default: break;
+    if (control == 1){
+        mappingdim(value);
+    } else if (control == 0){
+      if (mode == 0) {
+        mode_0(lightEnv);
+      } else {
+        mode_1(time,arrDimLevel);
+      }
     }
   }
 }
 
 void mode_0(int lightEnv) {
   if(lightEnv >= 700) {
-    digitalWrite(Relay, LOW); 
+    digitalWrite(Relay, LOW);   dimValue = 0;  Serial.println("DimLevel: 0");
   }
   else if(lightEnv >= 600 && lightEnv < 700) {
     digitalWrite(Relay, HIGH);  Zero();
@@ -184,7 +197,7 @@ void mode_0(int lightEnv) {
 
 void mappingdim(int value) {
   switch(value) {
-    case 0: digitalWrite(Relay, LOW); break;
+    case 0: digitalWrite(Relay, LOW);  dimValue = 0;  Serial.println("DimLevel: 0");break;
     case 1: digitalWrite(Relay, HIGH); Zero();
     case 2: digitalWrite(Relay, HIGH); One(); break;
     case 3: digitalWrite(Relay, HIGH); Two(); break;
@@ -256,10 +269,10 @@ void loop() {
     int lightVal = analogRead(lightValpin);
     DateTime now = rtc.now();
     int thisSec, thisMin, thisHour;
-    // get time từ bộ định thời
     thisSec = now.second();
     thisMin = now.minute();
     thisHour = now.hour();
+    Serial.println("This Hour: "+String(thisHour)+":"+String(thisMin));
     if (Serial.available() > 0) {
         String data = Serial.readString(); // get data
         Serial.println(data);
@@ -269,15 +282,11 @@ void loop() {
     if (Serial2.available() > 0) {
         String data = Serial2.readString();
         processSerialData(data,lightEnv,thisHour);
-        String envData = "Env:" + String(lightEnv);
-        String valData = "Val:" + String(lightVal);
-        char expectedAreaID[5]; // Định nghĩa một mảng char để lưu chuỗi
-        sprintf(expectedAreaID, "0x%02X", AREA_ID); // Định dạng chuỗi "0x01"
+        char expectedAreaID[5]; 
+        sprintf(expectedAreaID, "0x%02X", AREA_ID);
         char expectedLightID[5];
         sprintf(expectedLightID, "0x%02X", LIGHT_ID);
-
-        // ID Area + value sensor + value light + value dim + TB Error
-
+       // checkLightEnv(lightVal);
         String message = String("a0xFFb") + expectedAreaID + 'c'+ expectedLightID+'d'+String(lightEnv) + 'e' + String(lightVal) + 'f'+String(dimValue)+'g'+String(error);
         Serial2.println(message);
     }

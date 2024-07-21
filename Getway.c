@@ -1,4 +1,3 @@
-
 #include <Arduino.h>
 #include <WiFi.h>
 #include <ESP32Firebase.h>
@@ -6,15 +5,14 @@
 #define M1 21
 #define RXD2 4
 #define TXD2 17
-#define WIFI_SSID "p509"
-#define WIFI_PASSWORD "matkhauTu45den90"
-#define REFERENCE_URL "https://ledmqtt-default-rtdb.asia-southeast1.firebasedatabase.app/"  // Your Firebase project reference url
+#define WIFI_SSID "G1 324"
+#define WIFI_PASSWORD "22222222"
+#define REFERENCE_URL "https://lediot-6777b-default-rtdb.firebaseio.com/"  // Your Firebase project reference url
 
 #define LORA_GATEWAY 0x11       //  Gateway
 
 unsigned long lastReadTime = 0;
 const unsigned long readInterval = 100;  // Adjust this interval as needed
-
 Firebase firebase(REFERENCE_URL);
 unsigned long lastUpdateTime = 0;
 const unsigned long updateInterval = 1000;
@@ -41,7 +39,7 @@ void setup()
 }
 
 void processSerialData(String data) {
-  int aIndex = data.indexOf('a');  // 
+  int aIndex = data.indexOf('a');
   int bIndex = data.indexOf('b');
   int cIndex = data.indexOf('c');
   int dIndex = data.indexOf('d');
@@ -68,10 +66,10 @@ void processSerialData(String data) {
     int areaID = strtol(receivedAreaID.c_str(), NULL, 16); // Convert receivedAreaID from hex to int
     int lightID = strtol(receivedLightID.c_str(), NULL, 16); // Convert receivedLightID from hex to int
   
-    String envPath = "StreetLight/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/sensorEnv";
-    String valPath = "StreetLight/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/sensorLig";
-    String dimPath = "StreetLight/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/value";
-    String errorPath = "StreetLight/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/error";
+    String envPath = "LightStreet/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/sensorEnv";
+    String valPath = "LightStreet/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/sensorLig";
+    String dimPath = "LightStreet/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/value";
+    String errorPath = "LightStreet/Khuvuc" + String(areaID) + "/Light" + String(lightID) + "/error";
     firebase.setString(envPath.c_str(), String(lightEnv));
     firebase.setString(valPath.c_str(), String(lightVal));
     firebase.setString(errorPath.c_str(), String(error));
@@ -88,11 +86,14 @@ void loop()
   }
   if (runEvery(5000)) {
     for (int i = 1; i < 2; i++) {
-      String addr = "StreetLight/Khuvuc"+String(i);
+      String addr = "LightStreet/Khuvuc"+String(i);
       for (int j = 1; j < 2; j ++) {
         String addr2 = addr + "/Light"+String(j);
         Serial.println(addr2);
-        int Control = firebase.getInt(addr2 + "/Control");       // StreetLight/Khuvuc1/Light1
+        int Control = firebase.getInt(addr2 + "/Control");       // LightStreet/Khuvuc1/Light1
+        String Mode = firebase.getString(addr2 + "/Mode");
+        String value = firebase.getString(addr2 + "/value"); 
+
         Serial.println(Control);
         int arrDimLevel[24] = {0};
         if (Control == 1) {
@@ -125,14 +126,14 @@ void loop()
           }
           String AREA_ID = (i < 10) ? "0" + String(i) : String(i);
           String LIGHT_ID = (j < 10) ? "0" + String(j) : String(j);
-          String mess1 = 'a' + String("0x") + AREA_ID + 'b' + String("0x") + LIGHT_ID + 'c' + String(Control) + 'd' + stringArrDim;
+          String mess1 = 'a' + String("0x") + AREA_ID + 'b' + String("0x") + LIGHT_ID + 'c' + String(Control) + 'd' + Mode + 'e' value + 'f'+ stringArrDim;
           Serial2.println(mess1);
           Serial.println("Sended Message: " + mess1);
         } else if (Control == 0) {
           String stringArrDim = "000000000000000000000000";
           String AREA_ID = (i < 10) ? "0" + String(i) : String(i);
           String LIGHT_ID = (j < 10) ? "0" + String(j) : String(j);
-          String mess2 = 'a' + String("0x") + AREA_ID + 'b' + String("0x") + LIGHT_ID + 'c' + String(Control) + 'd' + stringArrDim;
+          String mess2 = 'a' + String("0x") + AREA_ID + 'b' + String("0x") + LIGHT_ID + 'c' + String(Control) + 'd' + Mode + 'e' value + 'f'+ stringArrDim;
           Serial2.println(mess2);
         }
       }
