@@ -25,8 +25,4 @@ Demo hoạt động
 
 ![450504481_1491359014815389_1964845785793478857_n](https://github.com/user-attachments/assets/1399a2c3-6d5f-4d8f-bf7d-bab622a0b44e)
 
-
-
-![Screenshot 2024-07-17 011130](https://github.com/user-attachments/assets/85dfdf74-6fc2-4033-8f7b-af21dc21fc83)
-
-
+![450395257_2646578928857838_8659406619888560186_n](https://github.com/user-attachments/assets/3b5c3374-eb85-43c5-aa7a-83df6e295ece)
