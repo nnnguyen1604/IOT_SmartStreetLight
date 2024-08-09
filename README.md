@@ -4,7 +4,8 @@ Description: Building an intelligent street lighting system. The lights operate 
  --------------------------------------------------------------------------------
 Hardware: Esp32, Arduino Nano, LoRa 433, Dimmer
 
-Development: Arduino IDE, Firebase
+Development: Arduino IDE, Firebase![237d33c03ab09eeec7a1](https://github.com/user-attachments/assets/6e91f4c2-73b0-41df-8d54-af61f4b1e533)
+
 
 ![Picture8](https://github.com/nnnguyen1604/IOT_SmartStreetLight/assets/124754446/14d5daa7-fe80-4158-879d-85a71770ee85)
 ![Presentation1](https://github.com/user-attachments/assets/760f1411-24bb-436e-8e6e-fb5d261607f4)
